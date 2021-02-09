@@ -1,4 +1,4 @@
-"# first-programs-python" 
-first - Числа Армстронга<br>
-second - Дружественные числа<br>
-third - Обрученные числа<br>
+<h1>Первые задания python</h1>
+<b>first</b> - Числа Армстронга<br>
+<b>second</b> - Дружественные числа<br>
+<b>third</b> - Обрученные числа<br>
