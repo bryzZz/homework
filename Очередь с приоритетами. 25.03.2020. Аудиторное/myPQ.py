@@ -23,14 +23,9 @@ class myQ:
     print(json.dumps(self._dct, sort_keys=True, indent=2))
   
   def getMax(self):
-    chk = 0
     if (bool(self._dct.keys())):
-      for i in self._dct.keys():
-        if (bool(i)):
-          chk = 1
-          if (chk == 1):
-            a = max(self._dct.keys())
-            print(self._dct[a][-1])
+      a = max(self._dct.keys())
+      print(self._dct[a][-1])
     else:
       print("queue is empty")
 
@@ -45,3 +40,7 @@ myq.push(15, 5)
 myq.pop(10)
 
 myq.printQueue()
+
+print()
+
+myq.getMax()
