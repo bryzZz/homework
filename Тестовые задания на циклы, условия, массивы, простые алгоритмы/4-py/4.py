@@ -35,6 +35,9 @@ for line in inputFile:
   inputData.append(str(int(line)))
 
 for item in inputData:
+  if getCheckSum(item) == 0:
+    outputData.append(item)
+    continue
   for i in permutations(item):
     if getCheckSum(i) == 0:
       outputData.append(i)
