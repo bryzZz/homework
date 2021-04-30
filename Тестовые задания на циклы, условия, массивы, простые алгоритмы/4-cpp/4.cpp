@@ -65,6 +65,10 @@ int main() {
   inputF.close();
 
   for(int i = 0; i < inputData.size(); i++){
+    if(getCheckSum(stoi(inputData[i]), matrix) == 0){
+        outputData.push_back(stoi(inputData[i]));
+        continue;
+    }
     vector<int> arr = permutations(inputData[i]);
     for(int j = 0; j < arr.size(); j++){
       if(getCheckSum(arr[j], matrix) == 0){
