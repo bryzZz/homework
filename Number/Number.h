@@ -1,5 +1,5 @@
-#ifndef Number_H
-#define Number_H
+#include <string>
+#include <iostream>
 
 class Number{
   private:
@@ -10,7 +10,7 @@ class Number{
     int fromHexadecimalToDecimal(string str);
 
   public:
-    Number(string num)
+    Number(string num);
     Number(int num);
     
     Number operator+=(const Number n);
@@ -39,5 +39,3 @@ class Number{
 
     friend std::ostream& operator<<(std::ostream& out, const Number& n);
 };
-
-#endif
