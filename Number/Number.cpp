@@ -1,3 +1,4 @@
+#include <string>
 #include "Number.h"
 
 //constructors
@@ -21,14 +22,15 @@ Number::Number(int num){
   value = num;
 }
 
-Number::string splice(string str, int firstPos){
+//private fields
+string Number::splice(string str, int firstPos){
   string newString = "";
   for(int i = firstPos; i < str.length(); i++){
     newString += str[i];
   }
   return newString;
 }
-Number::int fromOctalToDecimal(string str){
+int Number::fromOctalToDecimal(string str){
   int res = 0;
   for (int i = 0; i < (int)str.size(); ++i) {
     res *= 8;
@@ -36,7 +38,7 @@ Number::int fromOctalToDecimal(string str){
   }
   return res;
 }
-Number::int fromHexadecimalToDecimal(string str){
+int Number::fromHexadecimalToDecimal(string str){
   int res = 0;
   for (int i = 0; i < str.length(); i++) {
     if(str[i] == 'A'){
@@ -108,30 +110,30 @@ Number Number::operator--(int){
   return *this;
 }
 
-Number bool operator==(const Number n){
+bool Number::operator==(const Number n){
   return value == n.value; 
 }
-Number bool operator!=(const Number n){
+bool Number::operator!=(const Number n){
   return value != n.value; 
 }
-Number bool operator>(const Number n){
+bool Number::operator>(const Number n){
   return value > n.value; 
 }
-Number bool operator<(const Number n){
+bool Number::operator<(const Number n){
   return value < n.value; 
 }
-Number bool operator>=(const Number n){
+bool Number::operator>=(const Number n){
   return value >= n.value; 
 }
-Number bool operator<=(const Number n){
+bool Number::operator<=(const Number n){
   return value <= n.value; 
 }
 
-Number operator int(){
+Number::operator int(){
   return value;
 }
 
-Number pow(int power){
+Number Number::pow(int power){
   if(power == 1){
     return *this;
   }else if(power == 0){
