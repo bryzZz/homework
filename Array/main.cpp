@@ -11,13 +11,13 @@ template <class T> class List{
     int capacity;
 
     void increaseCapacity(int newCapacity) { 
-        capacity = newCapacity < capacity * 2 ? capacity * 2 : newCapacity; 
+        capacity = newCapacity < capacity * 2 ? capacity * 2 : newCapacity;
         T* newPtr = new T[capacity];
         for (int i = 0; i < size; i++){
             newPtr[i] = ptr[i];
         }
-        delete[] ptr; 
-        ptr = newPtr; 
+        delete[] ptr;
+        ptr = newPtr;
     }
 
     void merge_sort(T *arr, int low, int high){
