@@ -1,22 +1,15 @@
 // #include <string>
-// #include <vector>
-#include <set>
+#include <vector>
 
 using namespace std;
 
 class Node
 {
-private:
-    // int value;
-    // string notation;
-    // string splice(string str, int firstPos);
-    // int fromOctalToDecimal(string str);
-    // int fromHexadecimalToDecimal(string str);
 
 public:
     int value;
-    set<Node *> connections;
-    // Node *connections;
+    bool visited;
+    vector<Node *> connections;
 
     Node(int value);
 
@@ -44,10 +37,4 @@ public:
     // bool operator<(const Number n);
     // bool operator>=(const Number n);
     // bool operator<=(const Number n);
-
-    // operator int();
-
-    // Number pow(int power);
-
-    // friend std::ostream& operator<<(std::ostream& out, const Number& n);
 };
