@@ -58,8 +58,10 @@ int main()
     // └── node4
     //     └── node6
 
+    cout << "Can we get from node1 to node6? -- ";
     cout << boolalpha << dfs(&node1, &node6) << endl;
 
+    cout << "Can we get from node3 to node6? -- ";
     cout << boolalpha << dfs(&node3, &node6) << endl;
 
     return 0;
