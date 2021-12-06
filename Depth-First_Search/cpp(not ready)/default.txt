@@ -1,0 +1,1 @@
+value: 1; id: 1; connections: [{ nodeId: 2, weight: 1 },{ nodeId: 3, weight: 2 }]
