@@ -1,11 +1,75 @@
 #include <iostream>
-#include <vector>
-#include "./modules/List.h"
 
 using namespace std;
 
-/*
+class ArrayException {};
 
+template <class T> class List{
+    T *ptr;
+    int size;
+    int capacity;
+
+    void increaseCapacity(int newCapacity);
+
+    // void merge_sort(T *arr, int low, int high){}
+    // // Merge sort 
+    // void merge(T *arr, int low, int high, int mid){}
+
+public:
+    List();
+
+    ~List();
+
+    // int &operator[](int index){}
+
+    void insert(T elem, int index);
+
+    // void remove(int index);
+    void remove(int index){ 
+        if (index < 0 || index >= size){
+            throw ArrayException();
+        }
+        for (int j = index; j < size-1; j++){
+            ptr[j] = ptr[j+1];
+        }
+        ptr[size-1] = 0; 
+        size--; 
+    }
+
+    void push(T elem);
+
+    void pop();
+
+    // int length() const{}
+
+    // int findIndex(T elem){}
+
+    // void reverse(){}
+
+    // void sort(){}
+
+    // void clear(){}
+
+    // T* begin(){}
+
+    // T* end(){}
+
+    // friend ostream& operator<<(ostream &out, const List& arr);
+    friend ostream& operator<<(ostream &out, const List& arr){
+        out << "[";
+        for (int i = 0; i < arr.size; i++){
+            if(i == arr.size - 1){
+                out << arr.ptr[i];
+            }else{
+                out << arr.ptr[i] << ", ";
+            }
+        }
+        out << "]" << endl;
+        return out; 
+    }
+};
+
+/*
 template <class T> class List{
     T *ptr;
     int size;
@@ -173,58 +237,3 @@ public:
 };
 
 */
-
-int main(){
-    setlocale(LC_ALL, "Russian"); 
-
-    List<int> intArr;
-    List<string> stringArr;
-
-    for (int i = 4; i >= 0; i--){
-        intArr.push(i);
-        stringArr.push("I am string");
-    }
-
-    cout << "intArr: " << intArr;
-    cout << "stringArr: " << stringArr;
-
-    intArr.push(99);
-
-    cout << "pushed 99 to intArr: " << intArr;
-
-    intArr.pop();
-
-    cout << "poped 99 to intArr: " << intArr;
-
-    stringArr.insert("I am a string too!", 2);
-
-    cout << "insert element to stringArr: " << stringArr;
-
-        /*
-
-    int index = stringArr.findIndex("I am a string too!");
-
-    cout << "Find index of (I am a string too!) in stringArr: " << index << endl;
-
-    intArr.sort();
-
-    cout << "Sorted intArr: " << intArr;
-
-    intArr.reverse();
-
-    cout << "reverse intArr: " << intArr;
-
-    cout << "cout with iterators: " << endl;
-
-    auto it = intArr.begin();
-    while (it != intArr.end()){
-        cout << *it << " ";
-        ++it;
-    }
- 
-    cout << '\n';
-
-    */
-
-    return 0;
-}
